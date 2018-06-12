@@ -123,11 +123,17 @@ function addToScore(value){
     if(score > storeScore[0]){
         score = 0;
         $("#score").html("<h2>You're score is: "+score+"</h2>");
-        alert("loss");
+        alert("You Lose!");
         lose++;
         $("#winLoss").html("<h2>Wins: "+win+" Loss: "+lose+"</h2>");
-        
         storeValue = getNumbers();
+    }else if(score === storeScore[0]){
+        score = 0;
+        $("#score").html("<h2>You're score is: "+score+"</h2>");
+        alert("You Win!");
+        win++;
+        $("#winLoss").html("<h2>Wins: "+win+" Loss: "+lose+"</h2>");
+        storeValue = getNumbers();   
     }
 }
 
