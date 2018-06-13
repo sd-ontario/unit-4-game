@@ -1,3 +1,5 @@
+
+
 function generateNumber(){
     var randomNumber = Math.floor(Math.random()*100)+19;
     console.log(randomNumber);
@@ -38,7 +40,6 @@ $(document).ready(function(){
    $("#score").html("<h2>You're score is: 0");
    $("#winLoss").html("<h2>Wins: 0 Loss: 0</h2>");
    storeScore.push(number);
-   $("my-audio").get(0).play();
 })
 
 function addToScore(value){
@@ -52,13 +53,21 @@ function addToScore(value){
         lose++;
         $("#winLoss").html("<h2>Wins: "+win+" Loss: "+lose+"</h2>");
         storeValue = getNumbers();
+        var number = generateNumber();
+        $("#randomNumber").html("<h2>Target: "+number+"</h2>");
+        storeScore.length=0;
+        storeScore.push(number);
     }else if(score === storeScore[0]){
         score = 0;
         $("#score").html("<h2>You're score is: "+score+"</h2>");
         alert("You Win!");
         win++;
         $("#winLoss").html("<h2>Wins: "+win+" Loss: "+lose+"</h2>");
-        storeValue = getNumbers();   
+        storeValue = getNumbers();
+        var number = generateNumber();
+        $("#randomNumber").html("<h2>Target: "+number+"</h2>");
+        storeScore.length=0;
+        storeScore.push(number);   
     }
 }
 
